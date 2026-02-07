@@ -274,6 +274,18 @@ footer {
   }
 }
 
+/* Respect user's motion preferences for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .branch-line {
+    animation: none;
+    opacity: 0.2;
+  }
+  
+  .mascot:hover {
+    transform: none;
+  }
+}
+
 /* Mascot styles */
 .mascots-container {
   display: flex;

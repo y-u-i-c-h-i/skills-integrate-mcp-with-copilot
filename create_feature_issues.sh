@@ -2,7 +2,23 @@
 # Script to create GitHub issues for new features
 # This script creates 9 issues based on the Evolvve-Student-Chapter-App inspiration
 
+set -e  # Exit on any error
+
 REPO="y-u-i-c-h-i/skills-integrate-mcp-with-copilot"
+
+# Check if gh CLI is installed
+if ! command -v gh &> /dev/null; then
+    echo "Error: GitHub CLI (gh) is not installed."
+    echo "Please install it from: https://cli.github.com/"
+    exit 1
+fi
+
+# Check if authenticated
+if ! gh auth status &> /dev/null; then
+    echo "Error: Not authenticated with GitHub CLI."
+    echo "Please run: gh auth login"
+    exit 1
+fi
 
 echo "Creating GitHub issues for new features..."
 
