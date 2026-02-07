@@ -122,19 +122,16 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Show modal
     modal.classList.remove("hidden");
-    modal.classList.add("show");
   }
 
   // Close modal when clicking X
   closeBtn.addEventListener("click", () => {
-    modal.classList.remove("show");
     modal.classList.add("hidden");
   });
 
   // Close modal when clicking outside of it
   window.addEventListener("click", (event) => {
     if (event.target === modal) {
-      modal.classList.remove("show");
       modal.classList.add("hidden");
     }
   });
@@ -175,7 +172,6 @@ document.addEventListener("DOMContentLoaded", () => {
         signupForm.reset();
 
         // Close modal
-        modal.classList.remove("show");
         modal.classList.add("hidden");
 
         // Refresh activities list to show updated participants
